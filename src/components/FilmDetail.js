@@ -18,22 +18,16 @@ function FilmDetail({ match }) {
     setFilm(data);
   };
 
-  const history = useHistory();
+  const { goBack } = useHistory();
 
   return (
     <div>
       <h1>{film.title}</h1>
       <p>Overivew : {film.overview}</p>
-
+      <img src={`https://image.tmdb.org/t/p/w500${film.backdrop_path}`}></img>
       <hr />
 
-      <button
-        onClick={() => {
-          history.goBack();
-        }}
-      >
-        Go Back
-      </button>
+      <button onClick={goBack}>Go Back</button>
     </div>
   );
 }
