@@ -19,6 +19,8 @@ function Films() {
     const data = await Axios.get(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=8ebecc9f6798ef3e2aa77ea37765848b&language=en-US&page=${page}`
     ).then((response) => response.data);
+    console.log(data.results);
+
     setFilms(data.results);
   };
 
